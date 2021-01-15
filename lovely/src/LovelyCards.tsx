@@ -1,51 +1,43 @@
 import React, { useEffect, useState } from 'react'
 import TinderCard from 'react-tinder-card';
+import "./LovelyCards.css"
 
 const LovelyCards = () => {
-  
+
   const [ people, setPeople ] = useState([
     {
-      name: "Steave Jobs",
-      url: "",
+      name: "Brad Pitt",
+      url: "https://ocdn.eu/pulscms-transforms/1/UZKk9kpTURBXy9iODg3NThlY2E5YWEzMGE5Y2YyMDJkYmNjYjAzMjJhNy5qcGeSlQMCzJHNEZTNCeSVAs0DnQDDw4KhMAGhMQE",
     },
     {
-      name: "Alicja Smolińska",
-      url: "",
+      name: "Angelina Jolie",
+      url: "https://s3.viva.pl/newys/angelina-jolie-usmiechnieta-aktorka-swietuje-troche-urodziny-515153-GALLERY_BIG.jpg",
     },
     {
-      name: "Bartek Kawecki",
-      url: "",
+      name: "Cameron Diaz",
+      url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Cameron_Diaz_WE_2012_Shankbone_4.JPG/1200px-Cameron_Diaz_WE_2012_Shankbone_4.JPG",
     }
   ])
 
-  // const [ people, setPeople ] = useState([]);
-  // const [loading, setLoading] = useState(true)
-  // const URL = `https://api.github.com/users`;
-
-  // console.log(people);
-  
-  // useEffect(() => {
-  //   const getData = async () => {
-  //     const resp = await fetch(URL);
-  //     const data = await resp.json();
-  //     setPeople(data);
-  //     setLoading(false)
-  //   }
-  //   getData()
-  // }, [])
-
   
   return (
-    <div>
-      {people.map((person, i) => (
-        <TinderCard key={i} >
-          <div
-            style={{backgroundImage: `url(${person.url})`}}
-            className="card">
-            <h3>{ person.name }</h3>
-          </div>
-        </TinderCard>))}
+
+    <div className="lovelyCards__wrapper">
+      {people.map((person) => (
+        <div className="swipe">
+          <TinderCard
+            preventSwipe={[ 'up', 'down' ]}
+            key={person.name}
+          >
+            <div
+              style={{ backgroundImage: `url(${person.url})` }}
+              className="card">
+              <h3>{person.name}</h3>
+            </div>
+          </TinderCard>
+        </div>))}
     </div>
+
   )
 }
 
