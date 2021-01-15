@@ -1,0 +1,11 @@
+.header__wrapper{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid red;
+}
+
+.header__icon{
+ padding: 20px;
+ cursor: pointer;
+}
