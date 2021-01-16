@@ -19,7 +19,7 @@ const LovelyCards = () => {
 
   return (
 
-    <div className="lovelyCards__wrapper">
+    <div className="lovelyCards">
       {people.map((person) => (
         <div key={person.name} className="swipe">
           <TinderCard

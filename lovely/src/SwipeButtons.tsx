@@ -9,7 +9,7 @@ import FlashOnIcon from '@material-ui/icons/FlashOn';
 
 const SwipeButtons = () => {
   return (
-    <div className="swipeButtons__wrapper">
+    <div className="swipeButtons">
       <IconButton className="swipeButton__repeat">
         <ReplayIcon fontSize="large" />
       </IconButton>

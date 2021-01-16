@@ -15,7 +15,7 @@ const Header = ({ backButton, path }: IHeader) => {
   const history = useHistory()
 
   return (
-    <div className="header__wrapper">
+    <div className="header">
       {backButton ? (
         
           <IconButton onClick={()=>history.push(path)}>
