@@ -13,15 +13,14 @@ interface IChat {
 const Chat = ({ name, message, timestamp, profilePic }: IChat) => {
   return (
     <div className="chat">
-      <div className="chat-left">
-        <Avatar className="chat__image" alt={name} src={profilePic} />
-
+      <Avatar className="chat__image" alt={name} src={profilePic} />
+        
+      <div className="chat__details">
+          <h2>{name}</h2>
+          <p>{message}</p>
       </div>
-      <div>
-        <h2>{name}</h2>
-        <p>{message}</p>
-      </div>
-      <p>{ timestamp }</p>
+      
+      <p className="chat__timestamp">{timestamp}</p>
     </div>
 
   )
