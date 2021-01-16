@@ -1,0 +1,11 @@
+.chats__wrapper{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+
+}
+
+.chat {
+  height: 80px;
+  
+}

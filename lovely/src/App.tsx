@@ -1,6 +1,7 @@
 import './App.css';
 import Header from "./Header"
 import LovelyCards from "./LovelyCards"
+import Chats from "./Chats"
 import SwipeButtons from './SwipeButtons'
 import {
   BrowserRouter as Router,
@@ -12,13 +13,14 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Header />
         <Switch >
           <Route path="/chat">
-            <h1>chat</h1>
+            <Header backButton={true} path="/" />
+            <Chats />
           </Route>
 
           <Route path="/">
+            <Header backButton={false} path="/profile"/>
             <LovelyCards />
             <SwipeButtons />
           </Route>
