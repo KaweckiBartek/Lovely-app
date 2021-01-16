@@ -8,19 +8,22 @@ const LovelyCards = () => {
   const [ people, setPeople ] = useState([])
  
   useEffect(() => {
-    database.collection("people").onSnapshot((snapshot) => {
+
+    const unsubscribe = database.collection("people").onSnapshot((snapshot) => {
       setPeople(snapshot.docs.map((doc) => doc.data()))
     })
+    return () => {
+      unsubscribe()
+    }
   },[])
 
   return (
 
     <div className="lovelyCards__wrapper">
       {people.map((person) => (
-        <div className="swipe">
+        <div key={person.name} className="swipe">
           <TinderCard
             preventSwipe={[ 'up', 'down' ]}
-            key={person.name}
           >
             <div
               style={{ backgroundImage: `url(${person.url})` }}

@@ -1,6 +1,7 @@
 import './App.css';
 import Header from "./Header"
 import LovelyCards from "./LovelyCards"
+import SwipeButtons from './SwipeButtons'
 import {
   BrowserRouter as Router,
   Switch,
@@ -19,6 +20,7 @@ function App() {
 
           <Route path="/">
             <LovelyCards />
+            <SwipeButtons />
           </Route>
         </Switch>
       </Router>
