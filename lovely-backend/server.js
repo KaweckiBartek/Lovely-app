@@ -1,6 +1,6 @@
 import express from "express"
 import mongoose from "mongoose"
-import Cards from "./dbCards";
+import Cards from "./dbCards.js";
 
 
 //App config 
@@ -40,7 +40,6 @@ app.get('lovely/cards', (req, res) => {
     }
   })
 })
-
 
 //Listener
 app.listen(port, () => console.log(`listening on localhost: ${port}`));
