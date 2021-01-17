@@ -1,6 +1,7 @@
 import express from "express"
 import mongoose from "mongoose"
 import Cards from "./dbCards.js";
+import Cors from 'cors'
 
 
 //App config 
@@ -10,17 +11,20 @@ const connection__url = `mongodb+srv://admin:FMcCK2ksxBm0YqBJ@cluster0.0stpq.mon
 
 //Middelwares 
 
+app.use(express.json());
+app.use(Cors())
+
 //DB Config 
 mongoose.connect(connection__url, {
-  useNewUrlParser: true,
+  useNewUrlParser: true, 
   useCreateIndex: true,
   useUnifiedTopology: true,
 })
 
 //API Endpoinds
-app.get('/', (req, res) => res.status(200).send('Hello Bartek'));
+app.get('/lovely', (req, res) => res.status(200).send('Hello Bartolo'));
 
-app.post('/lovely/card', (req, res) => {
+app.post("/lovely/cards", (req, res) => {
   const dbCard = req.body;
   Cards.create(dbCard, (err, data) => {
     if (err) {
@@ -31,7 +35,7 @@ app.post('/lovely/card', (req, res) => {
   })
 })
 
-app.get('lovely/cards', (req, res) => {
+app.get('/lovely/cards', (req, res) => {
   Cards.find((err, data) => {
     if (err) {
       res.status(500).send(err)
