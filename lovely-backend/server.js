@@ -35,7 +35,7 @@ app.post("/lovely/cards", (req, res) => {
   })
 })
 
-app.get('/lovely/cards', (req, res) => {
+app.get("/lovely/cards", (req, res) => {
   Cards.find((err, data) => {
     if (err) {
       res.status(500).send(err)
