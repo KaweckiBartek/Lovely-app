@@ -4,6 +4,7 @@ import "./ChatScreen.css"
 
 const ChatScreen = () => {
   const [input, setInput] = useState('')
+  
   const [ messages, setMessages ] = useState([ {
     name: "Ellen",
     image: "",
