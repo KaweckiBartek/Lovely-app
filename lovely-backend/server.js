@@ -22,7 +22,7 @@ mongoose.connect(connection__url, {
 })
 
 //API Endpoinds
-app.get('/lovely', (req, res) => res.status(200).send('Hello Bartolo'));
+app.get('/', (req, res) => res.status(200).send('Hello Bartolo i Alson'));
 
 app.post("/lovely/cards", (req, res) => {
   const dbCard = req.body;
